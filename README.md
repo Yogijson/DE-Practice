@@ -10,6 +10,7 @@ Bronze → Silver → Gold lakehouse pattern on Databricks + Delta Lake
 - **Delta Lake** — ACID transactions, time travel, schema enforcement
 - **Apache Airflow** — pipeline orchestration
 - **dbt** — SQL transformations, data testing, lineage documentation
+- **Snowflake** — Virtual Warehouses, Streams, Tasks, Time Travel, Zero-Copy Cloning
 
 ## Pipeline
 - `bronze_orders` — raw ingestion (incremental load)

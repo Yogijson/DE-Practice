@@ -3,7 +3,24 @@
 A production-style data platform built with modern DE tools.
 
 ## Architecture
-Bronze → Silver → Gold lakehouse pattern on Databricks + Delta Lake
+
+Raw Sources (API/Files)
+
+↓
+
+Bronze Layer (Incremental load, raw data preserved)
+
+↓
+
+Silver Layer (Cleaned, validated, is_valid flag)
+
+↓
+
+Gold Layer (Aggregated, business-ready)
+
+↓
+
+Consumers (Dashboards, ML, Finance reports)
 
 ## Stack
 - **PySpark** — distributed data processing
@@ -23,4 +40,4 @@ Bronze → Silver → Gold lakehouse pattern on Databricks + Delta Lake
 - Null checks scoped to valid rows only
 
 ## Tools
-Python 3.11 · dbt-databricks 1.12 · Delta Lake · Databricks Community Edition
+Python 3.11 · dbt-databricks 1.12 · Delta Lake · Databricks Community Edition · Snowflake

@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: silver_orders
+    description: "Cleaned and validated orders from bronze layer"
+    columns:
+      - name: id
+        description: "Unique order identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: status
+        description: "Order status - always uppercase"
+        tests:
+          - accepted_values:
+              values: ['COMPLETED', 'PENDING', 'REFUNDED']
+
+      - name: amount
+        description: "Order amount in USD - null means bad source data"
+        tests:
+          - not_null:
+              where: "is_valid = true"
